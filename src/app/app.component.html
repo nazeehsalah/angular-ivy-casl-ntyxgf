@@ -1,0 +1,16 @@
+<p
+  *ngIf="
+    'delete' || 'read' || 'create' || 'update'
+      | ablePure: todoUpdateTest.type
+      | async
+  "
+>
+  Can perform all tasks against TODO
+</p>
+<p *ngIf="'read' | ablePure: todoUpdateTest.type | async">Can Read TODO</p>
+<p *ngIf="'read' || 'all' | ablePure: todoUpdateTest.type | async">
+  Can alll TODO
+</p>
+<p *ngIf="'create' | ablePure: todoUpdateTest.type | async">Can create TODO</p>
+<p *ngIf="'update' | ablePure: todoUpdateTest.type | async">Can Update TOD</p>
+<p *ngIf="'delete' | ablePure: todoUpdateTest.type | async">Can Delete TOD</p>
